@@ -1,14 +1,14 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const WebpackBaseConfig = require("./webpack.config.base");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const { merge } = require("webpack-merge");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const WebpackBaseConfig = require('./webpack.config.base');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { merge } = require('webpack-merge');
 
 module.exports = merge(WebpackBaseConfig, {
-  mode: "production",
+  mode: 'production',
   module: {
     rules: [
       {
@@ -19,22 +19,22 @@ module.exports = merge(WebpackBaseConfig, {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "css-loader", // 转化 CSS 为 CommonJS
+            loader: 'css-loader', // 转化 CSS 为 CommonJS
             options: {
               modules: true, //开启
-              importLoaders: 1,
+              importLoaders: 2,
             },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [["postcss-preset-env"]],
+                plugins: [['postcss-preset-env']],
               },
             },
           },
           {
-            loader: "less-loader",
+            loader: 'less-loader',
             options: { lessOptions: { javascriptEnabled: true } },
           },
         ],
@@ -42,19 +42,19 @@ module.exports = merge(WebpackBaseConfig, {
       {
         test: /\.css$/i,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
-              importLoaders: 1,
+              importLoaders: 2,
             },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [["postcss-preset-env"]],
+                plugins: [['postcss-preset-env']],
               },
             },
           },
@@ -62,28 +62,28 @@ module.exports = merge(WebpackBaseConfig, {
       },
     ],
   },
-  devtool: "nosources-source-map",
+  devtool: 'nosources-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "public/index.html",
+      filename: 'index.html',
+      template: 'public/index.html',
       inject: true,
-      title: "Development",
+      title: 'Development',
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: "./public/**/*",
-          to: "./",
+          from: './public/**/*',
+          to: './',
           globOptions: {
-            ignore: ["**/favicon.png", "**/index.html"],
+            ignore: ['**/favicon.png', '**/index.html'],
           },
           noErrorOnMissing: true,
         },
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: '[name].css',
     }),
   ],
   optimization: {

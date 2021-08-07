@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
 const WebpackBaseConfig = {
   entry: {
     main: path.resolve(__dirname, '../src/index.tsx'),
@@ -43,10 +45,6 @@ const WebpackBaseConfig = {
         generator: {
           filename: 'static/[hash][ext][query]', // 指定文件输出目录
         },
-      },
-      {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/inline', // webpack5 已支持资源模块 代替url-loader
       },
     ],
   },

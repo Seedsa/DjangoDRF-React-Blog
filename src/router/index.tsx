@@ -3,8 +3,10 @@ import Home from '@/Pages/Home';
 import Tags from '@/Pages/Tags';
 import About from '@/Pages/About';
 import Archives from '@/Pages/Archives';
+import Login from '@/Pages/User/Login';
+import SignUp from '@/Pages/User/SignUp';
 import Layout from '../Layout';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Router, Switch, Route, Link } from 'react-router-dom';
 import { routeConfigType } from '@/typings/Menu';
 import { createBrowserHistory } from 'history';
 
@@ -34,6 +36,18 @@ export const config: routeConfigType[] = [
     path: '/about',
     exact: true,
     component: <About />,
+  },
+  {
+    name: '登录',
+    path: '/lgin',
+    exact: true,
+    component: <Login />,
+  },
+  {
+    name: '注册',
+    path: '/singup',
+    exact: true,
+    component: <SignUp />,
   },
 ];
 

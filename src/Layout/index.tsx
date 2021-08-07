@@ -7,11 +7,11 @@ interface AppProps {
 }
 const Layout: React.FC<AppProps> = ({ children }) => {
   return (
-    <section>
+    <>
       <Header />
       <main className={styles.main}>{children}</main>
       <Footer />
-    </section>
+    </>
   );
 };
 

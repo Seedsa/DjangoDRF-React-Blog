@@ -29,6 +29,7 @@ module.exports = merge(WebpackBaseConfig, {
           },
         ],
       },
+
       {
         test: /\.less$/i,
         exclude: [/node_modules/],
@@ -57,6 +58,7 @@ module.exports = merge(WebpackBaseConfig, {
             options: {
               lessOptions: {
                 javascriptEnabled: true,
+                modifyVars: { '@primary-color': '#1DA57A' },
               },
             },
           },
