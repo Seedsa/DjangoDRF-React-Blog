@@ -4,6 +4,7 @@ import Tags from '@/Pages/Tags';
 import About from '@/Pages/About';
 import Archives from '@/Pages/Archives';
 import Login from '@/Pages/User/Login';
+import Details from '@/Pages/Details';
 import SignUp from '@/Pages/User/SignUp';
 import Layout from '../Layout';
 import { Router, Switch, Route, Link } from 'react-router-dom';
@@ -18,6 +19,12 @@ export const config: routeConfigType[] = [
     path: '/',
     exact: true,
     component: <Home />,
+  },
+  {
+    name: '详情',
+    path: '/details',
+    exact: false,
+    component: <Details />,
   },
   {
     name: '标签',

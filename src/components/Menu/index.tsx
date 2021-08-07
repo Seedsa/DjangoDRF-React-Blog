@@ -9,12 +9,14 @@ const cx = classnames.bind(styles);
 
 interface MenusProps {
   collapse: boolean;
+  setCollapse: any;
 }
-const Menus: React.FC<MenusProps> = ({ collapse }) => {
+const Menus: React.FC<MenusProps> = ({ collapse, setCollapse }) => {
   const history = useHistory();
   const location = useLocation();
   function handleClick(item: routeConfigType) {
     history.push(item.path);
+    setCollapse(true);
   }
   return (
     <nav className={cx('navWrap', { show: !collapse })}>

@@ -84,7 +84,18 @@ const Home: React.FC = () => {
             );
           })}
         </ul>
-        <div className={styles.right}>个人中心</div>
+        <div className={styles.right}>
+          <p>关于我</p>
+          Saima is a Ghost theme with high focus on typography and reading experience. It's sleek
+          and clutter free UI design will encourage your visitors to stay and read on your site
+          longer. This theme is perfect for a personal and professional blog. Also this theme can be
+          used in any collaborative and multi author blog. For example travel blog, technology blog,
+          lifestyle blog, health blog etc. This theme comes with light and dark mode you can set
+          default color mode to dark or light. Also your visitor can choose their preferred mode. Do
+          you write programming / coding related article or tutorial? this theme already comes with
+          code syntax highlighter. It also let your user copy by a single click of a button. are not
+          all these features amazing?
+        </div>
       </div>
     </section>
   );

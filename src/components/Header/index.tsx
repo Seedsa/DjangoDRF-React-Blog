@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ setSearchVisible }) => {
         <div className={styles.container}>
           <div className={styles.title}>Litle Seed</div>
           <div className={styles.headerRight}>
-            <Menus collapse={collapse} />
+            <Menus collapse={collapse} setCollapse={setCollapse} />
             <IconFont onClick={handleSearch} type="icon-search" />
             <IconFont onClick={handleTheme} type={theme === 'light' ? 'icon-moon' : 'icon-sun'} />
             <IconFont

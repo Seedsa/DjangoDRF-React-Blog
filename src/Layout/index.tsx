@@ -11,11 +11,13 @@ const Layout: React.FC<AppProps> = ({ children }) => {
   const [searchVisible, setSearchVisible] = useState<boolean>(false);
   return (
     <>
-      <Header setSearchVisible={setSearchVisible} />
-      <main className={styles.main}>{children}</main>
+      <div className={styles.mainWrap}>
+        <Header setSearchVisible={setSearchVisible} />
+        <main className={styles.main}>{children}</main>
+        <Footer />
+      </div>
       <Back />
       <Search visible={searchVisible} setVisible={setSearchVisible} />
-      <Footer />
     </>
   );
 };
