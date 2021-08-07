@@ -6,15 +6,14 @@ import classnames from 'classnames/bind';
 import { routeConfigType } from '@/typings/Menu';
 
 const cx = classnames.bind(styles);
-const Menus: React.FC = ({ mobileMenu }: any) => {
-  console.log(mobileMenu);
+const Menus: React.FC = ({ collapse }: any) => {
   const history = useHistory();
   const location = useLocation();
   function handleClick(item: routeConfigType) {
     history.push(item.path);
   }
   return (
-    <nav className={cx('navWrap', { show: mobileMenu })}>
+    <nav className={cx('navWrap', { show: !collapse })}>
       <ul className={styles.navList}>
         {RouteConfig.map((item, index) => {
           return (

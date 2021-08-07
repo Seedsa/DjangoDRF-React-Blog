@@ -6,7 +6,7 @@ import Menus from '../Menu';
 const Header: React.FC = () => {
   const [theme, setTheme] = useState('light');
   const [visible, setVisible] = useState<boolean>(true);
-  const [mobileMenu, setMobileMenu] = useState(false);
+  const [collapse, setCollapse] = useState(true);
   const [scroll, setScroll] = useState(0);
   function handleTheme() {
     if (document.documentElement.dataset.theme === 'light') {
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
       setVisible(true);
     } else {
       setVisible(false);
-      setMobileMenu(false);
+      setCollapse(true);
     }
     setTimeout(function () {
       topValue = scrollTop;
@@ -55,12 +55,12 @@ const Header: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.title}>Litle Seed</div>
           <div className={styles.headerRight}>
-            <Menus mobileMenu={mobileMenu} />
+            <Menus collapse={collapse} />
             <IconFont onClick={handleTheme} type={theme === 'light' ? '#icon-moon' : '#icon-sun'} />
             <IconFont
-              type="#icon-menu3"
+              type={collapse ? '#icon-menu3' : '#icon-close1'}
               onClick={() => {
-                setMobileMenu(!mobileMenu);
+                setCollapse(!collapse);
               }}
             />
           </div>

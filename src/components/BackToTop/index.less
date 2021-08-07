@@ -1,0 +1,26 @@
+.backBtn {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #f7f8fb;
+  background: var(--light-bg-color);
+  border-radius: 3px;
+  padding: 8px;
+  color: #1a202b;
+  color: var(--text-color-dark);
+  opacity: 0;
+  transition: all 0.25s;
+  &:focus {
+    color: #1a202b;
+    color: var(--text-color-dark);
+    color: #fff;
+    color: var(--white);
+  }
+  &.show {
+    opacity: 1;
+  }
+  &:hover {
+    background-color: var(--theme-color);
+    color: var(--white);
+  }
+}
