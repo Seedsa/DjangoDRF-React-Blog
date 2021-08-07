@@ -53,6 +53,7 @@
   svg {
     z-index: 50;
     position: relative;
+    margin-right: 14px;
     display: inline-flex;
     height: 20px;
     width: 28px;
@@ -60,7 +61,9 @@
     color: var(--text-color-normal);
     transition: 0.25s;
     left: auto;
-
+    &:last-child {
+      margin-right: 0;
+    }
     @media (min-width: 992px) {
       &:last-child {
         display: none;

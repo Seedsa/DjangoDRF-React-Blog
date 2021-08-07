@@ -6,7 +6,11 @@ import classnames from 'classnames/bind';
 import { routeConfigType } from '@/typings/Menu';
 
 const cx = classnames.bind(styles);
-const Menus: React.FC = ({ collapse }: any) => {
+
+interface MenusProps {
+  collapse: boolean;
+}
+const Menus: React.FC<MenusProps> = ({ collapse }) => {
   const history = useHistory();
   const location = useLocation();
   function handleClick(item: routeConfigType) {

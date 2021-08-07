@@ -1,12 +1,38 @@
 import React from 'react';
-import { Tag } from 'antd';
+import styles from './index.less';
 const Tags: React.FC = () => {
+  const tags: any = [
+    {
+      title: '111',
+    },
+    {
+      title: '111',
+    },
+    {
+      title: '111',
+    },
+    {
+      title: '111',
+    },
+    {
+      title: '111',
+    },
+    {
+      title: '111',
+    },
+    {
+      title: '111',
+    },
+  ];
   return (
-    <div>
-      <Tag>Tag 1</Tag>
-      <Tag>Tag 2</Tag>
-      <Tag>Tag 3</Tag>
-      <Tag>Tag 4</Tag>
+    <div className={styles.tagsWrap}>
+      <div className={styles.tagsList}>
+        <ul>
+          {tags.map((item: any) => {
+            return <li className={styles.itemCard}>{item.title}</li>;
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

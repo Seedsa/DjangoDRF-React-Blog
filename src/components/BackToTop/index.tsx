@@ -47,7 +47,7 @@ const index = () => {
           scroll(0);
         }}
       >
-        <IconFont type="#icon-fanhuidingbu" />
+        <IconFont type="icon-fanhuidingbu" />
       </a>
     </div>
   );

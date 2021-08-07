@@ -1,7 +1,7 @@
 .backBtn {
   position: fixed;
-  right: 16px;
-  bottom: 16px;
+  right: 100px;
+  bottom: 50px;
   background: #f7f8fb;
   background: var(--light-bg-color);
   border-radius: 3px;
@@ -22,5 +22,12 @@
   &:hover {
     background-color: var(--theme-color);
     color: var(--white);
+  }
+  @media screen and (max-width: 768px) {
+    right: 60px;
+  }
+  @media screen and (max-width: 480px) {
+    right: 20px;
+    bottom: 20px;
   }
 }

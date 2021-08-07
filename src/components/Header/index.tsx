@@ -3,7 +3,11 @@ import styles from './index.less';
 import IconFont from '@/components/IconFont';
 import cs from 'classnames';
 import Menus from '../Menu';
-const Header: React.FC = () => {
+
+interface HeaderProps {
+  setSearchVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Header: React.FC<HeaderProps> = ({ setSearchVisible }) => {
   const [theme, setTheme] = useState('light');
   const [visible, setVisible] = useState<boolean>(true);
   const [collapse, setCollapse] = useState(true);
@@ -16,6 +20,9 @@ const Header: React.FC = () => {
       document.documentElement.dataset.theme = 'light';
       setTheme('light');
     }
+  }
+  function handleSearch() {
+    setSearchVisible(true);
   }
   let scrollTop = 0;
   let topValue = 0;
@@ -56,9 +63,10 @@ const Header: React.FC = () => {
           <div className={styles.title}>Litle Seed</div>
           <div className={styles.headerRight}>
             <Menus collapse={collapse} />
-            <IconFont onClick={handleTheme} type={theme === 'light' ? '#icon-moon' : '#icon-sun'} />
+            <IconFont onClick={handleSearch} type="icon-search" />
+            <IconFont onClick={handleTheme} type={theme === 'light' ? 'icon-moon' : 'icon-sun'} />
             <IconFont
-              type={collapse ? '#icon-menu3' : '#icon-close1'}
+              type={collapse ? 'icon-menu' : 'icon-close'}
               onClick={() => {
                 setCollapse(!collapse);
               }}

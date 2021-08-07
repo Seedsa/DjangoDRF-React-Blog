@@ -12,9 +12,25 @@ ol {
 }
 a {
   text-decoration: none;
+  cursor: pointer;
   transition: all 0.25s;
 }
 
+input[type='text'] {
+  background: #fff;
+  background: var(--body-bg);
+  border: 1px solid #e8e9eb;
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+  height: 2.5rem;
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+  color: #3d4452;
+  color: var(--text-color-normal);
+}
 // 兼容IE11
 @media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
   body .ant-design-pro > .ant-layout {

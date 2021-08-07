@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArticleType } from '@/typings/Home';
+import IconFont from '@/components/IconFont';
 import styles from './index.less';
 const Home: React.FC = () => {
   const mockData: ArticleType[] = [
@@ -70,11 +71,20 @@ const Home: React.FC = () => {
                   <a>{item.title}</a>
                 </h2>
                 <p>{item.desc}</p>
-                <div className={styles.meta}>{item.date}</div>
+                <div className={styles.meta}>
+                  <span className={styles.tags}>React</span>
+                  <span className={styles.date}> {item.date}</span>
+                  <span className={styles.viewer}>
+                    <IconFont type="icon-eye" />
+                    2000
+                  </span>
+                  <span className={styles.tag}>sddsdsd</span>
+                </div>
               </li>
             );
           })}
         </ul>
+        <div className={styles.right}>个人中心</div>
       </div>
     </section>
   );

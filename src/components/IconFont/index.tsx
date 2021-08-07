@@ -12,7 +12,7 @@ const IconFont: React.FC<IconFontProps> = (props) => {
 
   return (
     <svg fill="currentColor" onClick={onClick} className={cs(styles.svgClass, classNames)}>
-      <use xlinkHref={type} />
+      <use xlinkHref={`#${type}`} />
     </svg>
   );
 };
